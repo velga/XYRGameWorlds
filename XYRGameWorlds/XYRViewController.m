@@ -8,6 +8,7 @@
 
 #import "XYRViewController.h"
 #import "XYRGameWorldCell.h"
+#import "XYRWorldModel.h"
 
 @interface XYRViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -33,6 +34,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     XYRGameWorldCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XYRGameWorldCell" forIndexPath:indexPath];
+    
+    XYRWorldModel *worldModel = self.worldsList[indexPath.row];
+    
+    cell.isOnline = [worldModel.worldStatus.statusDescription.lowercaseString isEqualToString:@"online"];
+    cell.worldName.text = worldModel.worldName;
     
     return cell;
 }
