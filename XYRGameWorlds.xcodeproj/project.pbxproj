@@ -16,6 +16,7 @@
 		BA9953871BB48DA700053672 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9953861BB48DA700053672 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		BA99538A1BB48E7900053672 /* XYRWorldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9953891BB48E7900053672 /* XYRWorldModel.m */; settings = {ASSET_TAGS = (); }; };
 		BA99538D1BB4921F00053672 /* XYRRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA99538C1BB4921F00053672 /* XYRRequestManager.m */; settings = {ASSET_TAGS = (); }; };
+		BA9953901BB4973500053672 /* NSDictionary+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = BA99538F1BB4973500053672 /* NSDictionary+URLEncode.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		BA9953891BB48E7900053672 /* XYRWorldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYRWorldModel.m; sourceTree = "<group>"; };
 		BA99538B1BB4921F00053672 /* XYRRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYRRequestManager.h; sourceTree = "<group>"; };
 		BA99538C1BB4921F00053672 /* XYRRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYRRequestManager.m; sourceTree = "<group>"; };
+		BA99538E1BB4973500053672 /* NSDictionary+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+URLEncode.h"; sourceTree = "<group>"; };
+		BA99538F1BB4973500053672 /* NSDictionary+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+URLEncode.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				BA99538C1BB4921F00053672 /* XYRRequestManager.m */,
 				BA9953881BB48E7900053672 /* XYRWorldModel.h */,
 				BA9953891BB48E7900053672 /* XYRWorldModel.m */,
+				BA99538E1BB4973500053672 /* NSDictionary+URLEncode.h */,
+				BA99538F1BB4973500053672 /* NSDictionary+URLEncode.m */,
 				BA9953751BB481DE00053672 /* Main.storyboard */,
 				BA9953781BB481DE00053672 /* Assets.xcassets */,
 				BA99537D1BB481DE00053672 /* Info.plist */,
@@ -169,6 +174,7 @@
 				BA99538A1BB48E7900053672 /* XYRWorldModel.m in Sources */,
 				BA9953711BB481DE00053672 /* AppDelegate.m in Sources */,
 				BA9953851BB489C600053672 /* XYRGameWorldCell.m in Sources */,
+				BA9953901BB4973500053672 /* NSDictionary+URLEncode.m in Sources */,
 				BA99536E1BB481DE00053672 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

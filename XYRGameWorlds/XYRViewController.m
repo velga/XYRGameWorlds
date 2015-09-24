@@ -9,8 +9,15 @@
 #import "XYRViewController.h"
 #import "XYRGameWorldCell.h"
 #import "XYRWorldModel.h"
+#import "XYRRequestManager.h"
 
 @interface XYRViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITextField *loginTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *requestButton;
 
 @property (strong, nonatomic) NSArray *worldsList;
 
@@ -18,6 +25,28 @@
 
 
 @implementation XYRViewController
+
+- (IBAction)requestButtonPressed:(UIButton *)sender
+{
+    [self.activityIndicator startAnimating];
+    self.requestButton.enabled = NO;
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.tableView.alpha = 0.0;
+    }];
+     
+    [XYRRequestManager requestAvailableWorldsWithUserName:self.loginTextField.text
+                                                 password:self.passwordTextField.text
+                                        complitionHandler:^(NSArray *worldsList, NSError *error)
+    {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.tableView.alpha = 1.0;
+        } completion:^(BOOL finished) {
+            [self.activityIndicator stopAnimating];
+            self.requestButton.enabled = YES;
+        }];
+    }];
+}
 
 #pragma marka - TableView Delegate
 
