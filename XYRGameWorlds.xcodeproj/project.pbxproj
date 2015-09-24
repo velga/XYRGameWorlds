@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		BA99536E1BB481DE00053672 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA99536D1BB481DE00053672 /* main.m */; };
 		BA9953711BB481DE00053672 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9953701BB481DE00053672 /* AppDelegate.m */; };
-		BA9953741BB481DE00053672 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9953731BB481DE00053672 /* ViewController.m */; };
+		BA9953741BB481DE00053672 /* XYRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9953731BB481DE00053672 /* XYRViewController.m */; };
 		BA9953771BB481DE00053672 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9953751BB481DE00053672 /* Main.storyboard */; };
 		BA9953791BB481DE00053672 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA9953781BB481DE00053672 /* Assets.xcassets */; };
-		BA99537C1BB481DE00053672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA99537A1BB481DE00053672 /* LaunchScreen.storyboard */; };
+		BA9953851BB489C600053672 /* XYRGameWorldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9953841BB489C600053672 /* XYRGameWorldCell.m */; settings = {ASSET_TAGS = (); }; };
+		BA9953871BB48DA700053672 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9953861BB48DA700053672 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +21,14 @@
 		BA99536D1BB481DE00053672 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BA99536F1BB481DE00053672 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BA9953701BB481DE00053672 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BA9953721BB481DE00053672 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BA9953731BB481DE00053672 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BA9953721BB481DE00053672 /* XYRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYRViewController.h; sourceTree = "<group>"; };
+		BA9953731BB481DE00053672 /* XYRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYRViewController.m; sourceTree = "<group>"; };
 		BA9953761BB481DE00053672 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA9953781BB481DE00053672 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BA99537B1BB481DE00053672 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA99537D1BB481DE00053672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA9953831BB489C600053672 /* XYRGameWorldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYRGameWorldCell.h; sourceTree = "<group>"; };
+		BA9953841BB489C600053672 /* XYRGameWorldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYRGameWorldCell.m; sourceTree = "<group>"; };
+		BA9953861BB48DA700053672 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +63,15 @@
 			children = (
 				BA99536F1BB481DE00053672 /* AppDelegate.h */,
 				BA9953701BB481DE00053672 /* AppDelegate.m */,
-				BA9953721BB481DE00053672 /* ViewController.h */,
-				BA9953731BB481DE00053672 /* ViewController.m */,
+				BA9953721BB481DE00053672 /* XYRViewController.h */,
+				BA9953731BB481DE00053672 /* XYRViewController.m */,
+				BA9953831BB489C600053672 /* XYRGameWorldCell.h */,
+				BA9953841BB489C600053672 /* XYRGameWorldCell.m */,
 				BA9953751BB481DE00053672 /* Main.storyboard */,
 				BA9953781BB481DE00053672 /* Assets.xcassets */,
-				BA99537A1BB481DE00053672 /* LaunchScreen.storyboard */,
 				BA99537D1BB481DE00053672 /* Info.plist */,
 				BA99536C1BB481DE00053672 /* Supporting Files */,
+				BA9953861BB48DA700053672 /* Launch Screen.storyboard */,
 			);
 			path = XYRGameWorlds;
 			sourceTree = "<group>";
@@ -136,7 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA99537C1BB481DE00053672 /* LaunchScreen.storyboard in Resources */,
+				BA9953871BB48DA700053672 /* Launch Screen.storyboard in Resources */,
 				BA9953791BB481DE00053672 /* Assets.xcassets in Resources */,
 				BA9953771BB481DE00053672 /* Main.storyboard in Resources */,
 			);
@@ -149,8 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA9953741BB481DE00053672 /* ViewController.m in Sources */,
+				BA9953741BB481DE00053672 /* XYRViewController.m in Sources */,
 				BA9953711BB481DE00053672 /* AppDelegate.m in Sources */,
+				BA9953851BB489C600053672 /* XYRGameWorldCell.m in Sources */,
 				BA99536E1BB481DE00053672 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,14 +170,6 @@
 				BA9953761BB481DE00053672 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BA99537A1BB481DE00053672 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BA99537B1BB481DE00053672 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -213,7 +211,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -251,7 +249,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,6 +298,7 @@
 				BA9953821BB481DE00053672 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
