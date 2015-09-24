@@ -39,7 +39,10 @@
                              parameters:requestParameters
                       complitionHandler:^(NSData *data, NSError *error)
     {
-        if (error || !data.length) { complitionHandler(nil, error); }
+        if (error || !data.length) {
+            complitionHandler(nil, error);
+            return;
+        }
         
         NSError *serializationError;
         NSDictionary *response = [NSPropertyListSerialization propertyListWithData:data
@@ -47,7 +50,10 @@
                                                                             format:NULL
                                                                              error:&serializationError];
         
-        if (serializationError) { complitionHandler(nil, serializationError); }
+        if (serializationError) {
+            complitionHandler(nil, serializationError);
+            return;
+        }
         NSCParameterAssert([response isKindOfClass:[NSDictionary class]]);
         
         NSArray *worldsList = [self parseWorldsListFromResponse:response];

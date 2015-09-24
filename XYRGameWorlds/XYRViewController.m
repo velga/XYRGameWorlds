@@ -26,32 +26,52 @@
 
 @implementation XYRViewController
 
-- (IBAction)requestButtonPressed:(UIButton *)sender
+- (void)triggerUpdateAnimation:(BOOL)start
 {
     [self.activityIndicator startAnimating];
-    self.requestButton.enabled = NO;
+    self.requestButton.enabled = !start;
     
     [UIView animateWithDuration:0.2 animations:^{
-        self.tableView.alpha = 0.0;
+        self.tableView.alpha = start ? 0.0 : 1.0;
     }];
-     
+}
+
+- (IBAction)requestButtonPressed:(UIButton *)sender
+{
+    [self.view endEditing:YES];
+    
+    if (!self.loginTextField.text.length || !self.passwordTextField.text.length) {
+        [[[UIAlertView alloc] initWithTitle:@"Please, enter login and password data."
+                                    message:nil
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+        
+        return;
+    }
+    
+    [self triggerUpdateAnimation:YES];
     [XYRRequestManager requestAvailableWorldsWithUserName:self.loginTextField.text
                                                  password:self.passwordTextField.text
                                         complitionHandler:^(NSArray *worldsList, NSError *error)
     {
-        NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"worldName" ascending:YES];
-        NSArray *sortedArray = [worldsList sortedArrayUsingDescriptors:@[descriptor]];
-        self.worldsList = sortedArray;
-        [self.tableView reloadData];
+        if (!error) {
+            NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"worldName" ascending:YES];
+            NSArray *sortedArray = [worldsList sortedArrayUsingDescriptors:@[descriptor]];
+            self.worldsList = sortedArray;
+            [self.tableView reloadData];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"Failed to receive your data"
+                                        message:@"Please, try again later."
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
+        }
         
-        [UIView animateWithDuration:0.2 animations:^{
-            self.tableView.alpha = 1.0;
-        } completion:^(BOOL finished) {
-            [self.activityIndicator stopAnimating];
-            self.requestButton.enabled = YES;
-        }];
+        [self triggerUpdateAnimation:NO];
     }];
 }
+
 
 #pragma marka - TableView Delegate
 
