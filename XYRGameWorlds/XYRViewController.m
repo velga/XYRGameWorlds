@@ -39,6 +39,11 @@
                                                  password:self.passwordTextField.text
                                         complitionHandler:^(NSArray *worldsList, NSError *error)
     {
+        NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"worldName" ascending:YES];
+        NSArray *sortedArray = [worldsList sortedArrayUsingDescriptors:@[descriptor]];
+        self.worldsList = sortedArray;
+        [self.tableView reloadData];
+        
         [UIView animateWithDuration:0.2 animations:^{
             self.tableView.alpha = 1.0;
         } completion:^(BOOL finished) {

@@ -22,7 +22,7 @@
                                 <rect key="frame" x="142" y="334.5" width="37" height="37"/>
                                 <color key="color" red="0.3294117647" green="0.55294117649999996" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dXq-vn-qgB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dXq-vn-qgB">
                                 <rect key="frame" x="0.0" y="138" width="320" height="430"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -34,13 +34,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="rU1-Hf-99V">
-                                                    <rect key="frame" x="16" y="22" width="264.5" height="0.0"/>
+                                                    <rect key="frame" x="16" y="22" width="257" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3v-Dd-75R">
-                                                    <rect key="frame" x="288" y="10" width="23.5" height="23.5"/>
+                                                    <rect key="frame" x="280.5" y="10" width="23.5" height="23.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="i3v-Dd-75R" secondAttribute="height" multiplier="1:1" id="bDF-he-71A"/>
@@ -49,7 +49,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="i3v-Dd-75R" secondAttribute="bottom" constant="10" id="9RS-AY-ZrM"/>
-                                                <constraint firstAttribute="trailing" secondItem="i3v-Dd-75R" secondAttribute="trailing" constant="8" id="Kvy-Q0-R8C"/>
+                                                <constraint firstAttribute="trailing" secondItem="i3v-Dd-75R" secondAttribute="trailing" constant="16" id="Kvy-Q0-R8C"/>
                                                 <constraint firstItem="rU1-Hf-99V" firstAttribute="leading" secondItem="mxS-W1-YcE" secondAttribute="leading" constant="16" id="Lg7-hU-Q0W"/>
                                                 <constraint firstItem="i3v-Dd-75R" firstAttribute="top" secondItem="mxS-W1-YcE" secondAttribute="top" constant="10" id="PHc-y7-vYC"/>
                                                 <constraint firstItem="i3v-Dd-75R" firstAttribute="leading" secondItem="rU1-Hf-99V" secondAttribute="trailing" constant="8" id="uFa-My-cHc"/>

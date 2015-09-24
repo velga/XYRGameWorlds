@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XYRRequestManager.h"
 #import "NSDictionary+URLEncode.h"
+#import "XYRWorldModel.h"
 
 @implementation XYRRequestManager
 
@@ -40,12 +41,18 @@
     {
         if (error || !data.length) { complitionHandler(nil, error); }
         
+        NSError *serializationError;
         NSDictionary *response = [NSPropertyListSerialization propertyListWithData:data
                                                                            options:NSPropertyListImmutable
-                                                                            format:NULL error:nil];
-        //TODO: parse
+                                                                            format:NULL
+                                                                             error:&serializationError];
         
-        complitionHandler(nil, nil);
+        if (serializationError) { complitionHandler(nil, serializationError); }
+        NSCParameterAssert([response isKindOfClass:[NSDictionary class]]);
+        
+        NSArray *worldsList = [self parseWorldsListFromResponse:response];
+        
+        complitionHandler(worldsList, nil);
     }];
 }
 
@@ -56,6 +63,7 @@
     NSCParameterAssert([url isKindOfClass:[NSURL class]]);
     
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    sessionConfiguration.timeoutIntervalForResource = 30.0;
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
     
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
@@ -71,6 +79,22 @@
     }];
     
     [task resume];
+}
+
++ (NSArray *)parseWorldsListFromResponse:(NSDictionary *)response
+{
+    NSArray *responseArray = response[@"allAvailableWorlds"];
+    NSCParameterAssert([responseArray isKindOfClass:[NSArray class]]);
+    
+    NSMutableArray *worldsList = [[NSMutableArray alloc] init];
+    for (NSDictionary *worldInfo in responseArray) {
+        NSCParameterAssert([worldInfo isKindOfClass:[NSDictionary class]]);
+        
+        XYRWorldModel *worldModel = [[XYRWorldModel alloc] initWithDictionary:worldInfo];
+        [worldsList addObject:worldModel];
+    }
+    
+    return [worldsList copy];
 }
 
 @end

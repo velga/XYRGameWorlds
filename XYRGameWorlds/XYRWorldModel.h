@@ -10,8 +10,8 @@
 
 @interface XYRWorldStatusModel : NSObject
 
-@property (copy, nonatomic) NSString *statusDescription;
-@property (strong, nonatomic) NSNumber *statusId;
+@property (copy, nonatomic)   NSString *statusDescription;
+@property (assign, nonatomic) NSInteger statusId;
 
 - (instancetype)initWithDictionary:(NSDictionary *)worldStatusDictionary;
 
@@ -20,11 +20,12 @@
 
 @interface XYRWorldModel : NSObject
 
-@property (copy, nonatomic) NSString *country;
-@property (strong, nonatomic) NSNumber *worldId;
-@property (copy, nonatomic) NSString *mapURL;
-@property (copy, nonatomic) NSString *worldName;
-@property (copy, nonatomic) NSString *url;
+@property (copy, nonatomic)   NSString *country;
+@property (assign, nonatomic) NSInteger worldId;
+@property (copy, nonatomic)   NSString *language;
+@property (copy, nonatomic)   NSString *mapURL;
+@property (copy, nonatomic)   NSString *worldName;
+@property (copy, nonatomic)   NSString *url;
 @property (strong, nonatomic) XYRWorldStatusModel *worldStatus;
 
 - (instancetype)initWithDictionary:(NSDictionary *)worldDictionary;
