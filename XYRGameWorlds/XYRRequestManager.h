@@ -14,8 +14,8 @@
                                   password:(NSString *)password
                          complitionHandler:(void(^)(NSArray *worldsList, NSError *error))complitionHandler;
 
-+ (void)requestAvailableWorldsWithURL:(NSURL *)url
-                           parameters:(NSDictionary *)parameters
-                    complitionHandler:(void(^)(NSData *data, NSError *error))complitionHandler;
++ (void)makeRequestWithURL:(NSURL *)url
+                parameters:(NSDictionary *)parameters
+         complitionHandler:(void(^)(NSData *data, NSError *error))complitionHandler;
 
 @end

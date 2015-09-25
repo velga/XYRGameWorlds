@@ -28,11 +28,14 @@
 
 - (void)triggerUpdateAnimation:(BOOL)start
 {
+    if (start) { [self.activityIndicator startAnimating]; }
     [self.activityIndicator startAnimating];
     self.requestButton.enabled = !start;
     
     [UIView animateWithDuration:0.2 animations:^{
         self.tableView.alpha = start ? 0.0 : 1.0;
+    } completion:^(BOOL finished) {
+        if (!start) { [self.activityIndicator stopAnimating]; }
     }];
 }
 

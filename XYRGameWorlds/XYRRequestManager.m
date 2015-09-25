@@ -35,9 +35,9 @@
                                         @"deviceId"   : deviceId};
     NSURL *requestURL = [NSURL URLWithString:kRequestURL];
     
-    [self requestAvailableWorldsWithURL:requestURL
-                             parameters:requestParameters
-                      complitionHandler:^(NSData *data, NSError *error)
+    [self makeRequestWithURL:requestURL
+                  parameters:requestParameters
+           complitionHandler:^(NSData *data, NSError *error)
     {
         if (error || !data.length) {
             complitionHandler(nil, error);
@@ -62,9 +62,9 @@
     }];
 }
 
-+ (void)requestAvailableWorldsWithURL:(NSURL *)url
-                           parameters:(NSDictionary *)parameters
-                    complitionHandler:(void(^)(NSData *data, NSError *error))complitionHandler
++ (void)makeRequestWithURL:(NSURL *)url
+                parameters:(NSDictionary *)parameters
+         complitionHandler:(void(^)(NSData *data, NSError *error))complitionHandler
 {
     NSCParameterAssert([url isKindOfClass:[NSURL class]]);
     
